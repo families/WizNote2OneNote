@@ -1,6 +1,7 @@
 # -*-coding:utf-8-*-
 #!/usr/bin/env python3
 
+import sys
 import mimetypes
 import os
 import re
@@ -304,6 +305,7 @@ def main():
 
 if __name__ == '__main__':
     try:
+        sys.setrecursionlimit(3000)
         main()
     except HTTPError as e:
         print(e.response.json())
